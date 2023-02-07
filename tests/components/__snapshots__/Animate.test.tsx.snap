@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Animate component matches the snapshot 1`] = `
+<p
+  className="animate undefined "
+  data-testid="animate-element"
+>
+  Animated Text
+</p>
+`;
