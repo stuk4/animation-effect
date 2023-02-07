@@ -1,20 +1,14 @@
 import React from "react";
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Animate } from '../../src/components/Animate';
-import { addNewClassNamesAnimation, addDelayCSSAnimation } from '../../src/utils/animations';
 
-/**
- * @jest-environment jsdom
-*/
+
 
 const ReactTestRenderer = require('react-test-renderer');
 
-jest.mock('../../src/utils/animations');
 
 describe('Animate component', () => {
-    afterEach(() => {
-    jest.clearAllMocks();
-  });
+  
   it('renders the children with animation styles',async () => {
     const text = 'Animated Text';
     const {getByTestId,rerender} = render(
@@ -23,18 +17,10 @@ describe('Animate component', () => {
         <p>{text}</p>
       </Animate>
     );
-    await waitFor(() => {
-      expect(addNewClassNamesAnimation).toHaveBeenCalled()
-      
-    })
-    await waitFor(() => {
-      expect(addDelayCSSAnimation).toHaveBeenCalled()
-      
-    })
-    await waitFor(() =>{
-      const element =  screen.getByTestId("animate-element");
-      expect(element.classList.contains(`animate__${'fadeIn'}`)).toBe(true)
-    })
+    const element = await screen.getByTestId("animate-element");
+    await screen.debug()
+    expect(element.classList.contains(`animate__${'fadeIn'}`)).toBe(true)
+  
 
   });
 

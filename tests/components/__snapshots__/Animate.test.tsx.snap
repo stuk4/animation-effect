@@ -1,9 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Animate component matches the snapshot 1`] = `
+exports[`matches the snapshot 1`] = `
 <p
-  className="animate undefined "
+  className="animate animate__fadeIn "
   data-testid="animate-element"
+  style={
+    {
+      "animationDuration": "1000ms",
+    }
+  }
 >
   Animated Text
 </p>
