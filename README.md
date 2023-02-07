@@ -1,63 +1,62 @@
 <div align="center">
-  <img alt="Logo" src="https://github.com/stuk4/typewriter-effect/blob/main/static/500x500.png" width="200" />
+  <img alt="Logo" src="https://github.com/stuk4/animation-effect/blob/main/static/500x500.png" width="200" />
 </div>
 <div align="center">
-  <img alt="Logo" src="https://github.com/stuk4/typewriter-effect/blob/main/static/gif_hero.gif" width="200" />
+  <img alt="Logo" src="https://github.com/stuk4/animation-effect/blob/main/static/gif_hero.gif" width="200" />
 </div>
 
-# Typewriter Effect
+# Animations 
 
-This project is an implementation of a typewriter effect using React and TypeScript.
+This project is an implementation of an animation effect using React and TypeScript.
 
 ## Usage
-### `TypeWriter` component
-To use the `<TypeWriter> `component, you need pass it the following props:
+### `Animate` component
+To use the `<Animate> `component, you need pass it the following props:
 
 | Name                   | Type                      | Default     | Description                                                                                                                                                                                                                                                                                     |
 | ---------------------- | ------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **elementType**               | `string`                 | `required`  | Is the element to render (if you want a more types of elements only edit its interface :tw-1f609: ).  |
-| **text**         | `string`                  | `required`     | A string to apply the effect..
-| **interval**           | `number (optional)` | `20` | The interval between character writed                                                                                                                                               |
-| **classNames**  | `string (optional)`                 | `""`     |  ClassName to add to the Element created                                                                                                                                                                                      |
-| **delay**           | `number (optional)`                  | `0` | A number indicating the  delay in milliseconds to start to write
+| **children**               | `JSX.Element`                 | `required`  | Is the element to render.  |
+| **animation**         | 	`string`                  | `required`     | Animation to apply..
+| **duration**           | `number (optional)` | `1000` | The duration of animation in miliseconds        |
+| **delay**           | `number (optional)`                  | `0` | A number indicating the  delay in milliseconds to start to animate |
+
+
 Example:
 ```tsx
-import { TypeWriterInScroll } from './components/TypeWriter'
+import { Animate } from './components/Animate'
 
 export const Example = () => {
   return (
-    <TypeWriter 
-        elementType='p'
-        text={`Hello world, \n\n This is a test`}
+    <Animate 
+		animation='zoomIn'
      />
   )
 }
 
 ```
-### `TypeWriterInView` component
-To use the `<TypeWriterInView> `component, the principal diference between the normal is that it uses the library [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer) for show  the element when is in the viewport . You need pass it the following props:
+### `AnimateInView` component
+To use the `<AnimateInView> `component, the principal diference between the normal is that it uses the library [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer) for show  the element when is in the viewport . You need pass it the following props:
 
 | Name                   | Type                      | Default     | Description                                                                                                                                                                                                                                                                                     |
 | ---------------------- | ------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **elementType**               | `string`                 | `required`  | Is the element to render (if you want a more types of elements only edit its interface :tw-1f609: ).  |
-| **text**         | `string`                  | `required`     | A string to apply the effect..
-| **interval**           | `number (optional)` | `20` | The interval between character writed                                                                                                                                               |
-| **classNames**  | `string (optional)`                 | `""`     |  ClassName to add to the Element created                                                                                                                                                                                      |
-| **delay**           | `number (optional)`                  | `0` | A number indicating the  delay in milliseconds to start to write
+| **children**               | `JSX.Element`                 | `required`  | Is the element to render.  |
+| **animation**         | 	`string`                  | `required`     | Animation to apply..
+| **duration**           | `number (optional)` | `1000` | The duration of animation in miliseconds        |
+| **delay**           | `number (optional)`                  | `0` | A number indicating the  delay in milliseconds to start to animate |
+
 Example:
 ```tsx
-import { TypeWriterInView } from './components/TypeWriterInView'
+import { AnimateInView } from './components/AnimateInView'
 
 export const Example = () => {
   return (
-    <TypeWriterInView 
-        elementType='p'
-        text={`Hello world, \n\n This is a test`}
+    <Animate 
+		animation='zoomIn'
      />
   )
 }
 ```
-if you want use  `TypeWriterInView` into array I recommend remove this part and create another component and recive the porp InView.
+if you want use  `AnimateInView` into array I recommend remove this part and create another component and recive the porp InView.
 ```tsx
 const [ref, inView,node] = useInView({
       rootMargin: '-100px 0px',
@@ -110,4 +109,3 @@ Then, start the development server:
 ```bash
 yarn dev
 ```
-# animation-effect
