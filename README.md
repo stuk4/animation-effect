@@ -28,7 +28,7 @@ import { Animate } from './components/Animate'
 export const Example = () => {
   return (
     <Animate 
-		animation='zoomIn'
+	animation='zoomIn'
      />
   )
 }
@@ -51,7 +51,7 @@ import { AnimateInView } from './components/AnimateInView'
 export const Example = () => {
   return (
     <Animate 
-		animation='zoomIn'
+	animation='zoomIn'
      />
   )
 }
